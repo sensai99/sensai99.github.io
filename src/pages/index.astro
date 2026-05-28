@@ -1,83 +1,26 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
+import { profile } from '../data/content';
 
-const research = [
-  {
-    logo: 'MS',
-    org: 'Microsoft',
-    role: 'Research Extern',
-    date: 'Feb 2026 – Present',
-    bullets: [
-      'Developing entropy-guided adaptive decoding for speculative decoding approaches such as EAGLE.',
-      'Conducted roughly 1B-token pretraining on The Pile and instruction tuning on ShareGPT using LLaMA-3 8B.'
-    ]
-  },
-  {
-    logo: 'UM',
-    org: 'UMass IESL Lab',
-    role: 'Graduate Student Researcher',
-    date: 'Oct 2025 – Present',
-    bullets: [
-      'Contributing to XLM, a Python framework for non-autoregressive language models.',
-      'Exploring self-correction for diffusion language models to improve parallel token sampling.'
-    ]
-  },
-  {
-    logo: 'KL',
-    org: 'KLA',
-    role: 'Machine Learning Research Intern',
-    date: 'Jun 2025 – Aug 2025',
-    bullets: [
-      'Researched zero-shot defect retrieval and detection using vision-language models on SEM wafer images.',
-      'Enhanced Grounding DINO with phrase-level softmax classification, BERT text-encoder tuning, and domain-specific augmentations.'
-    ]
-  },
-  {
-    logo: 'UC',
-    org: 'UMass CIIR Lab',
-    role: 'Graduate Student Researcher',
-    date: 'Feb 2025 – May 2025',
-    bullets: [
-      'Explored personalized multimodal retrieval using VLMs and multimodal LLM-based reranking.'
-    ]
-  }
+const sectionLinks = [
+  { href: '/research', title: 'Research', copy: 'Publications, labs, and current research directions.' },
+  { href: '/projects', title: 'Projects', copy: 'Hands-on work with measurable outcomes and impact.' },
+  { href: '/publications', title: 'Publications', copy: 'Papers, preprints, and technical writing.' },
+  { href: '/experience', title: 'Experience', copy: 'Industry and research engineering experience.' },
+  { href: '/contact', title: 'Contact', copy: 'Best ways to reach me for opportunities.' }
 ];
-
-const projects = [
-  {
-    name: 'Mitigating PII Leakage in Chain-of-Thought of LRMs',
-    desc: 'Reduced personally identifiable information leakage in large reasoning models using prompt engineering and LoRA-SFT on GPT-OSS-20B, LLaMA-3.3-70B, and DeepSeek-R1-Qwen.'
-  },
-  {
-    name: 'Learned Sparse Retrieval using Vector Quantization',
-    desc: 'Built a learned sparse retrieval model with vector quantization and top-k sparsification on MS MARCO, achieving MRR@10 of 0.89 on ~7.5k passages.'
-  },
-  {
-    name: 'Fit-Aware Fashion Recommendation Re-ranking',
-    desc: 'Fine-tuned CLIP and used Faster R-CNN/K-means features for fit-aware reranking, achieving Recall@1 of 0.42 and Recall@20 of 0.95.'
-  },
-  {
-    name: 'Layout Generation using Diffusion Models',
-    desc: 'Developed a diffusion model for aesthetic layout generation with text, images, and shapes, reaching an FID score of 15.2.'
-  }
-];
-
 ---
 
 <BaseLayout>
   <Header />
-  <main id="top">
+  <main>
     <section class="hero section">
       <div class="hero-copy">
-        <p class="affiliations"><span class="eyebrow">Affiliations</span> UMass Amherst, Microsoft, Adobe</p>
-        <h1 class="name-title">Sai Sreenivas Chintha</h1>
-        <p class="hero-text">
-          I am a Computer Science M.S. student at UMass Amherst working on adaptive decoding, non-autoregressive language models, multimodal retrieval, and vision-language models.
-        </p>
-        <p class="hero-text">
-          My research interests are in NLP, information retrieval, and efficient LLM inference. I enjoy building reliable machine learning systems that are practical for real-world deployment.
-        </p>
+        <p class="affiliations"><span class="eyebrow">Affiliations</span> {profile.affiliations}</p>
+        <h1 class="name-title">{profile.name}</h1>
+        <p class="hero-text">{profile.bio[0]}</p>
+        <p class="hero-text">{profile.bio[1]}</p>
         <div class="button-row">
           <a class="button primary" href="mailto:chinthasaisreenivas@gmail.com">Email</a>
           <a class="button secondary" href="https://linkedin.com/in/sai-sreenivas" target="_blank">LinkedIn</a>
@@ -88,66 +31,17 @@ const projects = [
         <div class="photo-placeholder" aria-hidden="true"></div>
       </aside>
     </section>
-
-    <section class="section" id="research">
+    <section class="section">
       <div class="section-header">
-        <h2>RESEARCH</h2>
+        <h2>SECTIONS</h2>
       </div>
-      <div class="card timeline">
-        {research.map((item) => (
-          <article class="item">
-            <div>
-              <div class="role-row">
-                <span class="org-logo" aria-hidden="true">{item.logo}</span>
-                <h3>{item.role} · {item.org}</h3>
-              </div>
-              <ul>{item.bullets.map((bullet) => <li>{bullet}</li>)}</ul>
-            </div>
-            <span class="meta">{item.date}</span>
-          </article>
+      <div class="section-grid">
+        {sectionLinks.map((section) => (
+          <a class="card section-card" href={section.href}>
+            <h3>{section.title}</h3>
+            <p>{section.copy}</p>
+          </a>
         ))}
-      </div>
-    </section>
-
-    <section class="section" id="projects">
-      <div class="section-header">
-        <h2>PROJECTS</h2>
-      </div>
-      <div class="project-grid">
-        {projects.map((project) => (
-          <article class="card">
-            <h3>{project.name}</h3>
-            <p>{project.desc}</p>
-          </article>
-        ))}
-      </div>
-    </section>
-
-    <section class="section" id="experience">
-      <div class="section-header">
-        <h2>EXPERIENCE</h2>
-      </div>
-      <article class="card item">
-        <div>
-          <h3>Member of Technical Staff - 2 · Adobe</h3>
-          <ul>
-            <li>Worked on a caption generation prototype using CLIP, GPT-3, and supervised classification.</li>
-            <li>Led backend resiliency efforts supporting 99.9% service SLA across three major Adobe Express releases.</li>
-            <li>Optimized Node.js service memory usage by 60% using low-level string and array buffer optimizations.</li>
-          </ul>
-        </div>
-        <span class="meta">Jul 2021 – Jul 2024</span>
-      </article>
-    </section>
-
-    <section class="section contact" id="contact">
-      <div class="card">
-        <h2>CONTACT</h2>
-        <p>Best fit: applied/research roles in NLP, retrieval, multimodal learning, efficient LLM inference, and responsible AI.</p>
-        <div class="button-row">
-          <a class="button primary" href="mailto:chinthasaisreenivas@gmail.com">chinthasaisreenivas@gmail.com</a>
-          <a class="button secondary" href="tel:+14134724423">413-472-4423</a>
-        </div>
       </div>
     </section>
   </main>
@@ -178,38 +72,21 @@ const projects = [
   }
   .hero-card { align-self: stretch; display: flex; flex-direction: column; gap: 14px; }
   .photo-placeholder {
-    height: 220px;
+    min-height: 360px;
     border-radius: 10px;
     border: 1px solid #cbd5e1;
     background:
       radial-gradient(circle at 30% 20%, rgb(14 165 233 / 0.25), transparent 40%),
       linear-gradient(135deg, #f1f5f9, #e2e8f0);
   }
-  .project-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
-  .project-grid p { margin-top: 10px; }
-  .role-row {
-    display: flex;
-    align-items: center;
-    gap: 12px;
+  .section-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
   }
-  .org-logo {
-    width: 36px;
-    height: 36px;
-    border-radius: 8px;
-    border: 1px solid #bfdbfe;
-    background: #eff6ff;
-    color: #0369a1;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.82rem;
-    font-weight: 800;
-    letter-spacing: 0.03em;
-    flex-shrink: 0;
-  }
-  .contact .card { text-align: center; }
-  .contact .button-row { justify-content: center; }
+  .section-card p { margin-top: 10px; }
+  .section-card:hover { border-color: #93c5fd; }
   @media (max-width: 860px) {
-    .hero, .project-grid { grid-template-columns: 1fr; }
+    .hero, .section-grid { grid-template-columns: 1fr; }
   }
 </style>

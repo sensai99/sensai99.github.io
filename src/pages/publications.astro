@@ -1,0 +1,37 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import { publications } from '../data/content';
+---
+
+<BaseLayout title="Publications | Sai Sreenivas Chintha">
+  <Header />
+  <main>
+    <section class="section">
+      <div class="section-header">
+        <h2>PUBLICATIONS</h2>
+      </div>
+      <div class="grid">
+        {publications.map((pub) => (
+          <article class="card publication">
+            <h3>{pub.title}</h3>
+            <p class="authors">{pub.authors}</p>
+            <p>{pub.venue} · {pub.year}</p>
+            <a class="pub-link" href={pub.link} target="_blank">View Publication</a>
+          </article>
+        ))}
+      </div>
+    </section>
+  </main>
+</BaseLayout>
+
+<style>
+  .publication { display: grid; gap: 8px; }
+  .authors { color: #0f172a; font-weight: 600; }
+  .pub-link {
+    width: fit-content;
+    margin-top: 8px;
+    color: #0369a1;
+    font-weight: 700;
+  }
+</style>
