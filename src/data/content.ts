@@ -73,12 +73,16 @@ export const projects = [
 export const publications = [
   {
     title: 'Chain-of-Sanitized-Thoughts: Reducing PII Leakage in Chain-of-Thought Reasoning',
-    venue: 'Accepted at ICML 2026 Agents in the Wild Workshop',
+    authors: 'Arghyadeep Das, Sai Sreenivas Chintha, Rishiraj Girmal, Kinjal Pandey, Sharvi Endait',
+    venue: 'In Proceedings of the ICML 2026 Workshop on Agents in the Wild (AIWILD)',
+    year: '2026',
     link: 'https://openreview.net/forum?id=YQS4CjDtHX'
   },
   {
     title: 'XLM: A Python package for non-autoregressive language models',
-    venue: 'Accepted at EACL 2026 Demo',
+    authors: 'Dhruvesh Patel, Durga Prasad Maram, Sai Sreenivas Chintha, Benjamin Rozonoyer, Andrew McCallum',
+    venue: 'In Proceedings of the EACL 2026 System Demonstrations',
+    year: '2026',
     link: 'https://arxiv.org/abs/2512.17065'
   }
 ];

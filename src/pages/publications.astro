@@ -7,46 +7,115 @@ import { publications } from '../data/content';
 <BaseLayout title="Publications | Sai Sreenivas Chintha">
   <Header />
   <main>
-    <section class="section">
-      <div class="section-header">
-        <h2>PUBLICATIONS</h2>
-      </div>
-      <ul class="pub-list">
+    <section class="section publications-page">
+      <header class="pub-page-header">
+        <h1>publications</h1>
+        <p class="pub-subtitle">publications in reversed chronological order.</p>
+      </header>
+
+      <div class="pub-entries">
         {publications.map((pub) => (
-          <li>
-            <a class="pub-title" href={pub.link} target="_blank" rel="noopener noreferrer">
-              {pub.title}
-            </a>
-            <span class="pub-venue"> {pub.venue}.</span>
-          </li>
+          <article class="pub-entry">
+            <div class="pub-content">
+              <h2 class="pub-title">{pub.title}</h2>
+              <p class="pub-authors">{pub.authors}</p>
+              <p class="pub-venue"><em>{pub.venue}</em></p>
+              <a class="pub-abs" href={pub.link} target="_blank" rel="noopener noreferrer">ABS</a>
+            </div>
+            <div class="pub-year" aria-hidden="true">{pub.year}</div>
+          </article>
         ))}
-      </ul>
+      </div>
     </section>
   </main>
 </BaseLayout>
 
 <style>
-  .pub-list {
-    margin: 0;
-    padding-left: 1.25rem;
-    color: var(--muted);
-    font-size: 1.1rem;
-    line-height: 1.75;
+  .publications-page {
+    margin-top: 12px;
   }
-  .pub-list li + li {
-    margin-top: 14px;
+  .pub-page-header {
+    margin-bottom: 28px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--soft);
+  }
+  .pub-page-header h1 {
+    font-size: clamp(2.2rem, 4vw, 3rem);
+    font-weight: 800;
+    text-transform: lowercase;
+    letter-spacing: -0.03em;
+  }
+  .pub-subtitle {
+    margin-top: 8px;
+    font-size: 0.95rem;
+    color: var(--muted);
+  }
+  .pub-entries {
+    display: grid;
+    gap: 0;
+  }
+  .pub-entry {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 24px;
+    align-items: start;
+    padding: 22px 0;
+    border-bottom: 1px solid var(--soft);
+  }
+  .pub-entry:first-child {
+    padding-top: 0;
+  }
+  .pub-content {
+    display: grid;
+    gap: 6px;
   }
   .pub-title {
-    color: #0369a1;
-    font-weight: 700;
-    font-style: italic;
+    font-size: 1.05rem;
+    font-weight: 800;
+    line-height: 1.35;
+    color: var(--text);
   }
-  .pub-title:hover {
-    color: var(--accent);
+  .pub-authors {
+    font-size: 0.98rem;
+    color: var(--muted);
+    line-height: 1.5;
   }
   .pub-venue {
+    font-size: 0.98rem;
+    color: var(--muted);
+    margin: 0;
+  }
+  .pub-abs {
+    display: inline-flex;
+    width: fit-content;
+    margin-top: 6px;
+    padding: 2px 10px;
+    border: 1px solid var(--text);
+    border-radius: 2px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
     color: var(--text);
-    font-style: normal;
-    font-weight: 400;
+  }
+  .pub-abs:hover {
+    background: var(--text);
+    color: #fff;
+  }
+  .pub-year {
+    font-size: clamp(2.4rem, 5vw, 3.4rem);
+    font-weight: 700;
+    line-height: 1;
+    color: #cbd5e1;
+    letter-spacing: -0.04em;
+    user-select: none;
+  }
+  @media (max-width: 720px) {
+    .pub-entry {
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+    .pub-year {
+      font-size: 1.6rem;
+    }
   }
 </style>
