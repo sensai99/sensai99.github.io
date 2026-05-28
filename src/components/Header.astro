@@ -1,0 +1,27 @@
+<header class="site-header">
+  <a class="brand" href="#top">Sai Sreenivas Chintha</a>
+  <nav aria-label="Primary navigation">
+    <a href="#research">Research</a>
+    <a href="#projects">Projects</a>
+    <a href="#experience">Experience</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<style>
+  .site-header {
+    width: min(1120px, calc(100% - 32px));
+    margin: 0 auto;
+    padding: 22px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  .brand { font-weight: 800; letter-spacing: -0.03em; }
+  nav { display: flex; gap: 18px; color: var(--muted); font-weight: 650; font-size: 0.94rem; }
+  @media (max-width: 720px) {
+    .site-header { align-items: flex-start; flex-direction: column; }
+    nav { flex-wrap: wrap; gap: 12px; }
+  }
+</style>

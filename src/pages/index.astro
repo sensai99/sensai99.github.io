@@ -1,0 +1,174 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+
+const skills = ['Python', 'PyTorch', 'HuggingFace', 'Unsloth', 'vLLM', 'DeepSpeed', 'Information Retrieval', 'NLP', 'Vision-Language Models', 'Responsible AI', 'AWS', 'GCP', 'Linux'];
+
+const research = [
+  {
+    org: 'Microsoft',
+    role: 'Research Extern',
+    date: 'Feb 2026 – Present',
+    bullets: [
+      'Developing entropy-guided adaptive decoding for speculative decoding approaches such as EAGLE.',
+      'Conducted roughly 1B-token pretraining on The Pile and instruction tuning on ShareGPT using LLaMA-3 8B.'
+    ]
+  },
+  {
+    org: 'UMass IESL Lab',
+    role: 'Graduate Student Researcher',
+    date: 'Oct 2025 – Present',
+    bullets: [
+      'Contributing to XLM, a Python framework for non-autoregressive language models.',
+      'Exploring self-correction for diffusion language models to improve parallel token sampling.'
+    ]
+  },
+  {
+    org: 'KLA',
+    role: 'Machine Learning Research Intern',
+    date: 'Jun 2025 – Aug 2025',
+    bullets: [
+      'Researched zero-shot defect retrieval and detection using vision-language models on SEM wafer images.',
+      'Enhanced Grounding DINO with phrase-level softmax classification, BERT text-encoder tuning, and domain-specific augmentations.'
+    ]
+  },
+  {
+    org: 'UMass CIIR Lab',
+    role: 'Graduate Student Researcher',
+    date: 'Feb 2025 – May 2025',
+    bullets: [
+      'Explored personalized multimodal retrieval using VLMs and multimodal LLM-based reranking.'
+    ]
+  }
+];
+
+const projects = [
+  {
+    name: 'Mitigating PII Leakage in Chain-of-Thought of LRMs',
+    desc: 'Reduced personally identifiable information leakage in large reasoning models using prompt engineering and LoRA-SFT on GPT-OSS-20B, LLaMA-3.3-70B, and DeepSeek-R1-Qwen.'
+  },
+  {
+    name: 'Learned Sparse Retrieval using Vector Quantization',
+    desc: 'Built a learned sparse retrieval model with vector quantization and top-k sparsification on MS MARCO, achieving MRR@10 of 0.89 on ~7.5k passages.'
+  },
+  {
+    name: 'Fit-Aware Fashion Recommendation Re-ranking',
+    desc: 'Fine-tuned CLIP and used Faster R-CNN/K-means features for fit-aware reranking, achieving Recall@1 of 0.42 and Recall@20 of 0.95.'
+  },
+  {
+    name: 'Layout Generation using Diffusion Models',
+    desc: 'Developed a diffusion model for aesthetic layout generation with text, images, and shapes, reaching an FID score of 15.2.'
+  }
+];
+---
+
+<BaseLayout>
+  <Header />
+  <main id="top">
+    <section class="hero section">
+      <div class="hero-copy">
+        <p class="eyebrow">ML Research Engineer · NLP · Retrieval · VLMs</p>
+        <h1>Building efficient and reliable machine learning systems.</h1>
+        <p class="hero-text">
+          I am a Computer Science M.S. student at UMass Amherst working on adaptive decoding, non-autoregressive language models, multimodal retrieval, and vision-language models for domain-specific applications.
+        </p>
+        <div class="button-row">
+          <a class="button primary" href="/Sai_Sreenivas_Chintha_Resume.pdf" target="_blank">Download Resume</a>
+          <a class="button secondary" href="mailto:chinthasaisreenivas@gmail.com">Email Me</a>
+          <a class="button secondary" href="https://github.com/sensai99" target="_blank">GitHub</a>
+          <a class="button secondary" href="https://linkedin.com/in/sai-sreenivas" target="_blank">LinkedIn</a>
+        </div>
+      </div>
+      <aside class="card hero-card">
+        <p class="eyebrow">Currently</p>
+        <h2>M.S. CS @ UMass Amherst</h2>
+        <p>GPA 4.0/4.0 · Expected May 2026</p>
+        <div class="pill-list">
+          {skills.map((skill) => <span class="pill">{skill}</span>)}
+        </div>
+      </aside>
+    </section>
+
+    <section class="section" id="research">
+      <div class="section-header">
+        <p class="eyebrow">Research</p>
+        <h2>Recent research experience</h2>
+      </div>
+      <div class="card timeline">
+        {research.map((item) => (
+          <article class="item">
+            <div>
+              <h3>{item.role} · {item.org}</h3>
+              <ul>{item.bullets.map((bullet) => <li>{bullet}</li>)}</ul>
+            </div>
+            <span class="meta">{item.date}</span>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="section-header">
+        <p class="eyebrow">Selected work</p>
+        <h2>Projects with measurable outcomes</h2>
+      </div>
+      <div class="project-grid">
+        {projects.map((project) => (
+          <article class="card">
+            <h3>{project.name}</h3>
+            <p>{project.desc}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="section" id="experience">
+      <div class="section-header">
+        <p class="eyebrow">Industry</p>
+        <h2>Software and ML engineering foundation</h2>
+      </div>
+      <article class="card item">
+        <div>
+          <h3>Member of Technical Staff - 2 · Adobe</h3>
+          <ul>
+            <li>Worked on a caption generation prototype using CLIP, GPT-3, and supervised classification.</li>
+            <li>Led backend resiliency efforts supporting 99.9% service SLA across three major Adobe Express releases.</li>
+            <li>Optimized Node.js service memory usage by 60% using low-level string and array buffer optimizations.</li>
+          </ul>
+        </div>
+        <span class="meta">Jul 2021 – Jul 2024</span>
+      </article>
+    </section>
+
+    <section class="section contact" id="contact">
+      <div class="card">
+        <p class="eyebrow">Contact</p>
+        <h2>Open to ML Research Engineer roles.</h2>
+        <p>Best fit: applied/research roles in NLP, retrieval, multimodal learning, efficient LLM inference, and responsible AI.</p>
+        <div class="button-row">
+          <a class="button primary" href="mailto:chinthasaisreenivas@gmail.com">chinthasaisreenivas@gmail.com</a>
+          <a class="button secondary" href="tel:+14134724423">413-472-4423</a>
+        </div>
+      </div>
+    </section>
+  </main>
+</BaseLayout>
+
+<style>
+  .hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1.45fr) minmax(280px, 0.75fr);
+    gap: 26px;
+    align-items: center;
+    margin-top: 44px;
+  }
+  .hero-text { font-size: 1.18rem; max-width: 760px; margin-top: 22px; }
+  .hero-card { align-self: stretch; display: flex; flex-direction: column; justify-content: center; }
+  .project-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+  .project-grid p { margin-top: 10px; }
+  .contact .card { text-align: center; }
+  .contact .button-row { justify-content: center; }
+  @media (max-width: 860px) {
+    .hero, .project-grid { grid-template-columns: 1fr; }
+  }
+</style>
