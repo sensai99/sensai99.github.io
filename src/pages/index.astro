@@ -28,7 +28,7 @@ const sectionLinks = [
           <a class="button secondary" href="https://github.com/sensai99" target="_blank">GitHub</a>
         </div>
       </div>
-      <aside class="card hero-card">
+      <aside class="hero-card">
         <img class="profile-photo" src={meImage.src} alt="Sai Sreenivas Chintha" />
       </aside>
     </section>
@@ -71,14 +71,20 @@ const sectionLinks = [
     white-space: nowrap;
     font-size: clamp(2rem, 5.2vw, 4.8rem);
   }
-  .hero-card { align-self: stretch; display: flex; flex-direction: column; gap: 14px; }
+  .hero-card {
+    align-self: stretch;
+    padding: 0;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+  }
   .profile-photo {
     width: 100%;
     min-height: 360px;
     height: 100%;
     object-fit: cover;
     border-radius: 10px;
-    border: 1px solid #cbd5e1;
+    display: block;
   }
   .section-grid {
     display: grid;
