@@ -11,27 +11,42 @@ import { publications } from '../data/content';
       <div class="section-header">
         <h2>PUBLICATIONS</h2>
       </div>
-      <div class="grid">
+      <ul class="pub-list">
         {publications.map((pub) => (
-          <article class="card publication">
-            <h3>{pub.title}</h3>
-            <p class="authors">{pub.authors}</p>
-            <p>{pub.venue} · {pub.year}</p>
-            <a class="pub-link" href={pub.link} target="_blank">View Publication</a>
-          </article>
+          <li>
+            <a class="pub-title" href={pub.link} target="_blank" rel="noopener noreferrer">
+              {pub.title}
+            </a>
+            <span class="pub-venue"> {pub.venue}.</span>
+          </li>
         ))}
-      </div>
+      </ul>
     </section>
   </main>
 </BaseLayout>
 
 <style>
-  .publication { display: grid; gap: 8px; }
-  .authors { color: #0f172a; font-weight: 600; }
-  .pub-link {
-    width: fit-content;
-    margin-top: 8px;
+  .pub-list {
+    margin: 0;
+    padding-left: 1.25rem;
+    color: var(--muted);
+    font-size: 1.1rem;
+    line-height: 1.75;
+  }
+  .pub-list li + li {
+    margin-top: 14px;
+  }
+  .pub-title {
     color: #0369a1;
     font-weight: 700;
+    font-style: italic;
+  }
+  .pub-title:hover {
+    color: var(--accent);
+  }
+  .pub-venue {
+    color: var(--text);
+    font-style: normal;
+    font-weight: 400;
   }
 </style>

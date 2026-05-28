@@ -72,25 +72,14 @@ export const projects = [
 
 export const publications = [
   {
-    title: 'Entropy-Guided Adaptive Decoding for Speculative Inference',
-    authors: 'Sai Sreenivas Chintha, Collaborators',
-    venue: 'Preprint',
-    year: '2026',
-    link: '#'
+    title: 'Chain-of-Sanitized-Thoughts: Reducing PII Leakage in Chain-of-Thought Reasoning',
+    venue: 'Accepted at ICML 2026 Agents in the Wild Workshop',
+    link: 'https://openreview.net/forum?id=YQS4CjDtHX'
   },
   {
-    title: 'Self-Correction in Diffusion Language Models',
-    authors: 'Sai Sreenivas Chintha, UMass IESL Lab',
-    venue: 'Under Review',
-    year: '2026',
-    link: '#'
-  },
-  {
-    title: 'Zero-Shot Defect Retrieval with Vision-Language Models',
-    authors: 'Sai Sreenivas Chintha, KLA Research Team',
-    venue: 'Technical Report',
-    year: '2025',
-    link: '#'
+    title: 'XLM: A Python package for non-autoregressive language models',
+    venue: 'Accepted at EACL 2026 Demo',
+    link: 'https://arxiv.org/abs/2512.17065'
   }
 ];
 
