@@ -74,7 +74,7 @@ const news = [
     <section class="hero section">
       <div class="hero-copy">
         <p class="affiliations"><span class="eyebrow">Affiliations</span> UMass Amherst, Microsoft, Adobe</p>
-        <h1>Sai Sreenivas Chintha</h1>
+        <h1 class="name-title">Sai Sreenivas Chintha</h1>
         <p class="hero-text">
           I am a Computer Science M.S. student at UMass Amherst working on adaptive decoding, non-autoregressive language models, multimodal retrieval, and vision-language models.
         </p>
@@ -196,6 +196,10 @@ const news = [
     max-width: 760px;
     margin-top: 18px;
     color: #d6dde4;
+  }
+  .name-title {
+    white-space: nowrap;
+    font-size: clamp(2rem, 5.2vw, 4.8rem);
   }
   .hero-card { align-self: stretch; display: flex; flex-direction: column; gap: 14px; }
   .photo-placeholder {

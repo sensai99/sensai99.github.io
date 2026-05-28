@@ -1,5 +1,4 @@
 <header class="site-header">
-  <a class="brand" href="#top">Sai Sreenivas Chintha</a>
   <nav aria-label="Primary navigation">
     <a href="#top">about</a>
     <a href="#news">news</a>
@@ -17,15 +16,9 @@
     padding: 18px 0 10px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-end;
     gap: 20px;
     border-top: 1px solid var(--soft);
-  }
-  .brand {
-    font-size: 2.6rem;
-    font-weight: 800;
-    letter-spacing: -0.03em;
-    line-height: 1;
   }
   nav {
     display: flex;
@@ -42,8 +35,7 @@
     border-bottom-color: var(--accent);
   }
   @media (max-width: 720px) {
-    .site-header { align-items: flex-start; flex-direction: column; }
+    .site-header { align-items: flex-start; }
     nav { flex-wrap: wrap; gap: 12px; }
-    .brand { font-size: 2rem; }
   }
 </style>
