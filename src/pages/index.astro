@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
+import SocialIcon from '../components/SocialIcon.astro';
 import { profile } from '../data/content';
 import meImage from '../layouts/temp/images/me.jpeg';
 
@@ -23,9 +24,18 @@ const sectionLinks = [
         <p class="hero-text">{profile.bio[0]}</p>
         <p class="hero-text">{profile.bio[1]}</p>
         <div class="button-row">
-          <a class="button primary" href="mailto:chinthasaisreenivas@gmail.com">Email</a>
-          <a class="button secondary" href="https://linkedin.com/in/sai-sreenivas" target="_blank">LinkedIn</a>
-          <a class="button secondary" href="https://github.com/sensai99" target="_blank">GitHub</a>
+          <a class="button primary" href="mailto:chinthasaisreenivas@gmail.com">
+            <SocialIcon name="email" />
+            Email
+          </a>
+          <a class="button secondary" href="https://linkedin.com/in/sai-sreenivas" target="_blank" rel="noopener noreferrer">
+            <SocialIcon name="linkedin" />
+            LinkedIn
+          </a>
+          <a class="button secondary" href="https://github.com/sensai99" target="_blank" rel="noopener noreferrer">
+            <SocialIcon name="github" />
+            GitHub
+          </a>
         </div>
       </div>
       <aside class="hero-card">
