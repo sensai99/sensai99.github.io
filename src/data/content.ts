@@ -14,8 +14,9 @@ export const research = [
     role: 'Research Extern',
     date: 'Feb 2026 – Present',
     bullets: [
-      'Developing entropy-guided adaptive decoding for speculative decoding approaches such as EAGLE.',
-      'Conducted roughly 1B-token pretraining on The Pile and instruction tuning on ShareGPT using LLaMA-3 8B.'
+      'Developed entropy-guided adaptive decoding beyond fixed-step EAGLE generation, achieving up to ∼1.5x speedup.',
+      'Pretrained on ∼1B tokens from The Pile and instruction-tuned on ShareGPT using LLaMA-3 8B.',
+      'Analyzed entropy thresholds across code, math, and free-form prompts to characterize speed-quality tradeoffs.'
     ]
   },
   {
@@ -25,7 +26,7 @@ export const research = [
     date: 'Oct 2025 – Present',
     bullets: [
       'Contributing to XLM, a Python framework for non-autoregressive language models.',
-      'Exploring self-correction for diffusion language models to improve parallel token sampling.'
+      'Developed self-correction framework for variable-length diffusion LMs using insertion, deletion, and substitution operations.'
     ]
   },
   {
@@ -34,8 +35,9 @@ export const research = [
     role: 'Machine Learning Research Intern',
     date: 'Jun 2025 – Aug 2025',
     bullets: [
-      'Researched zero-shot defect retrieval and detection using vision-language models on SEM wafer images.',
-      'Enhanced Grounding DINO with phrase-level softmax classification, BERT text-encoder tuning, and domain-specific augmentations.'
+      'Fine-tuned Grounding DINO for domain-adaptive SEM defect detection, outperforming YOLO11 by ∼12% in localization and ∼6% in classification accuracy.',
+      'Enhanced Grounding DINO’s architecture with a softmax-based loss and fine-tuned the text encoder (BERT).',
+      'Improved visual generalization using Mosaic augmentation, defect-region cropping and prompt variations.'
     ]
   },
   {
@@ -44,7 +46,7 @@ export const research = [
     role: 'Graduate Student Researcher',
     date: 'Feb 2025 – May 2025',
     bullets: [
-      'Explored personalized multimodal retrieval using VLMs and multimodal LLM-based reranking.'
+      'Explored scalable personalized multimodal retrieval by integrating VLMs with multimodal language model-based re-ranking, leveraging prompt engineering and Unsloth for efficient fine-tuning on large instruction-tuned models.'
     ]
   }
 ];
