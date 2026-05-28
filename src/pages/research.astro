@@ -3,7 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import { research } from '../data/content';
 import microsoftLogo from '../layouts/temp/images/logos/microsoft.svg';
-import umassLogo from '../layouts/temp/images/logos/umass.png';
+import umassLogo from '../layouts/temp/images/logos/umass-seal.png';
 import klaLogo from '../layouts/temp/images/logos/kla.svg';
 
 const logos = {
@@ -26,7 +26,11 @@ const logos = {
             <div>
               <div class="role-row">
                 <img
-                  class="org-logo-img"
+                  class:list={[
+                    'org-logo-img',
+                    item.logo === 'umass' && 'org-logo-img--seal',
+                    item.logo === 'kla' && 'org-logo-img--wide'
+                  ]}
                   src={logos[item.logo as keyof typeof logos].src}
                   alt={`${item.org} logo`}
                 />
@@ -50,9 +54,19 @@ const logos = {
     gap: 12px;
   }
   .org-logo-img {
-    width: 36px;
-    height: 36px;
+    width: 44px;
+    height: 44px;
     object-fit: contain;
     flex-shrink: 0;
+  }
+  .org-logo-img--seal {
+    width: 56px;
+    height: 56px;
+  }
+  .org-logo-img--wide {
+    width: auto;
+    min-width: 88px;
+    max-width: 110px;
+    height: 44px;
   }
 </style>
