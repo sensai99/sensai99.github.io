@@ -2,6 +2,15 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import { research } from '../data/content';
+import microsoftLogo from '../layouts/temp/images/logos/microsoft.svg';
+import umassLogo from '../layouts/temp/images/logos/umass.png';
+import klaLogo from '../layouts/temp/images/logos/kla.svg';
+
+const logos = {
+  microsoft: microsoftLogo,
+  umass: umassLogo,
+  kla: klaLogo
+} as const;
 ---
 
 <BaseLayout title="Research | Sai Sreenivas Chintha">
@@ -16,7 +25,11 @@ import { research } from '../data/content';
           <article class="item">
             <div>
               <div class="role-row">
-                <span class="org-logo" aria-hidden="true">{item.logo}</span>
+                <img
+                  class="org-logo-img"
+                  src={logos[item.logo as keyof typeof logos].src}
+                  alt={`${item.org} logo`}
+                />
                 <h3>{item.role} · {item.org}</h3>
               </div>
               <ul>{item.bullets.map((bullet) => <li>{bullet}</li>)}</ul>
@@ -36,19 +49,10 @@ import { research } from '../data/content';
     align-items: center;
     gap: 12px;
   }
-  .org-logo {
+  .org-logo-img {
     width: 36px;
     height: 36px;
-    border-radius: 8px;
-    border: 1px solid #bfdbfe;
-    background: #eff6ff;
-    color: #0369a1;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.82rem;
-    font-weight: 800;
-    letter-spacing: 0.03em;
+    object-fit: contain;
     flex-shrink: 0;
   }
 </style>

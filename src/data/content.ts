@@ -9,7 +9,7 @@ export const profile = {
 
 export const research = [
   {
-    logo: 'MS',
+    logo: 'microsoft',
     org: 'Microsoft',
     role: 'Research Extern',
     date: 'Feb 2026 – Present',
@@ -19,7 +19,7 @@ export const research = [
     ]
   },
   {
-    logo: 'UM',
+    logo: 'umass',
     org: 'UMass IESL Lab',
     role: 'Graduate Student Researcher',
     date: 'Oct 2025 – Present',
@@ -29,7 +29,7 @@ export const research = [
     ]
   },
   {
-    logo: 'KL',
+    logo: 'kla',
     org: 'KLA',
     role: 'Machine Learning Research Intern',
     date: 'Jun 2025 – Aug 2025',
@@ -39,7 +39,7 @@ export const research = [
     ]
   },
   {
-    logo: 'UC',
+    logo: 'umass',
     org: 'UMass CIIR Lab',
     role: 'Graduate Student Researcher',
     date: 'Feb 2025 – May 2025',
