@@ -21,10 +21,17 @@ const sectionLinks = [
       <div class="hero-copy">
         <h1 class="name-title">{profile.name}</h1>
         <p class="affiliations"><span class="eyebrow">Affiliations</span> {profile.affiliations}</p>
+        <img
+          class="profile-photo"
+          src={meImage.src}
+          alt="Sai Sreenivas Chintha"
+          width={meImage.width}
+          height={meImage.height}
+        />
         {profile.bio.map((paragraph) => (
           <p class="hero-text" set:html={paragraph} />
         ))}
-        <div class="button-row">
+        <div class="button-row hero-buttons">
           <a class="button secondary" href="mailto:chinthasaisreenivas@gmail.com">
             <SocialIcon name="email" />
             Email
@@ -39,9 +46,6 @@ const sectionLinks = [
           </a>
         </div>
       </div>
-      <aside class="hero-card">
-        <img class="profile-photo" src={meImage.src} alt="Sai Sreenivas Chintha" />
-      </aside>
     </section>
     <section class="section">
       <div class="section-header">
@@ -61,21 +65,21 @@ const sectionLinks = [
 
 <style>
   .hero {
-    display: grid;
-    grid-template-columns: minmax(0, 1.4fr) minmax(300px, 0.7fr);
-    gap: 30px;
-    align-items: start;
     margin-top: 20px;
+  }
+  .hero-copy::after {
+    content: '';
+    display: block;
+    clear: both;
   }
   .affiliations {
     color: var(--muted);
     margin-top: 10px;
-    margin-bottom: 4px;
+    margin-bottom: 12px;
     font-size: 1.06rem;
   }
   .hero-text {
     font-size: 1.28rem;
-    max-width: 760px;
     margin-top: 18px;
     color: #334155;
   }
@@ -92,21 +96,19 @@ const sectionLinks = [
     white-space: nowrap;
     font-size: clamp(2rem, 5.2vw, 4.8rem);
   }
-  .hero-card {
-    align-self: stretch;
-    padding: 0;
-    background: transparent;
-    border: none;
-    box-shadow: none;
-  }
   .profile-photo {
-    width: 100%;
-    min-height: 360px;
-    height: 100%;
+    float: right;
+    width: clamp(220px, 30vw, 320px);
+    aspect-ratio: 1 / 1;
+    height: auto;
     object-fit: cover;
     object-position: center 28%;
     border-radius: 10px;
-    display: block;
+    margin: 4px 0 20px 28px;
+  }
+  .hero-buttons {
+    clear: both;
+    padding-top: 4px;
   }
   .section-grid {
     display: grid;
@@ -116,6 +118,15 @@ const sectionLinks = [
   .section-card p { margin-top: 10px; }
   .section-card:hover { border-color: #93c5fd; }
   @media (max-width: 860px) {
-    .hero, .section-grid { grid-template-columns: 1fr; }
+    .section-grid { grid-template-columns: 1fr; }
+    .profile-photo {
+      float: none;
+      display: block;
+      width: min(100%, 300px);
+      margin: 0 auto 24px;
+    }
+    .name-title {
+      white-space: normal;
+    }
   }
 </style>
