@@ -23,15 +23,15 @@ const {
 
 <style is:global>
   :root {
-    color-scheme: dark;
-    --bg: #141617;
-    --panel: #1a1d1f;
-    --text: #f4f7fb;
-    --muted: #c1c8cf;
-    --soft: #2a2f33;
-    --accent: #29c4ef;
-    --accent-dark: #14a5cf;
-    --chip: #192e36;
+    color-scheme: light;
+    --bg: #f8fafc;
+    --panel: #ffffff;
+    --text: #0f172a;
+    --muted: #475569;
+    --soft: #e2e8f0;
+    --accent: #0ea5e9;
+    --accent-dark: #0369a1;
+    --chip: #eff6ff;
   }
 
   * { box-sizing: border-box; }
@@ -60,13 +60,13 @@ const {
     border: 1px solid var(--soft);
     border-radius: 12px;
     padding: 24px;
-    box-shadow: 0 12px 36px rgb(2 6 9 / 0.25);
+    box-shadow: 0 12px 30px rgb(15 23 42 / 0.08);
   }
   .pill-list { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
-  .pill { background: var(--chip); color: #a7def1; border: 1px solid #23576a; padding: 6px 10px; border-radius: 999px; font-size: 0.9rem; font-weight: 600; }
+  .pill { background: var(--chip); color: var(--accent-dark); border: 1px solid #bfdbfe; padding: 6px 10px; border-radius: 999px; font-size: 0.9rem; font-weight: 600; }
   .button-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
-  .button { display: inline-flex; align-items: center; justify-content: center; border-radius: 999px; padding: 10px 16px; font-weight: 700; border: 1px solid #5a626a; }
-  .button.primary { background: #f4f7fb; color: #111827; border-color: #f4f7fb; }
+  .button { display: inline-flex; align-items: center; justify-content: center; border-radius: 999px; padding: 10px 16px; font-weight: 700; border: 1px solid #cbd5e1; }
+  .button.primary { background: var(--text); color: #ffffff; border-color: var(--text); }
   .button.secondary { background: transparent; color: var(--text); }
   .button:hover { transform: translateY(-1px); color: inherit; }
   .timeline { display: grid; gap: 16px; }
