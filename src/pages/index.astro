@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import { profile } from '../data/content';
+import meImage from '../layouts/temp/images/me.jpeg';
 
 const sectionLinks = [
   { href: '/research', title: 'Research', copy: 'Publications, labs, and current research directions.' },
@@ -28,7 +29,7 @@ const sectionLinks = [
         </div>
       </div>
       <aside class="card hero-card">
-        <div class="photo-placeholder" aria-hidden="true"></div>
+        <img class="profile-photo" src={meImage.src} alt="Sai Sreenivas Chintha" />
       </aside>
     </section>
     <section class="section">
@@ -71,13 +72,13 @@ const sectionLinks = [
     font-size: clamp(2rem, 5.2vw, 4.8rem);
   }
   .hero-card { align-self: stretch; display: flex; flex-direction: column; gap: 14px; }
-  .photo-placeholder {
+  .profile-photo {
+    width: 100%;
     min-height: 360px;
+    height: 100%;
+    object-fit: cover;
     border-radius: 10px;
     border: 1px solid #cbd5e1;
-    background:
-      radial-gradient(circle at 30% 20%, rgb(14 165 233 / 0.25), transparent 40%),
-      linear-gradient(135deg, #f1f5f9, #e2e8f0);
   }
   .section-grid {
     display: grid;
