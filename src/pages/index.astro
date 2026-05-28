@@ -61,11 +61,6 @@ const projects = [
   }
 ];
 
-const news = [
-  { date: 'Apr 2026', item: 'Will join as a Machine Learning Research Engineer after graduation.' },
-  { date: 'Feb 2026', item: 'Started Research Externship at Microsoft focused on adaptive decoding.' },
-  { date: 'Oct 2025', item: 'Joined UMass IESL Lab as Graduate Student Researcher.' }
-];
 ---
 
 <BaseLayout>
@@ -99,24 +94,9 @@ const news = [
       </aside>
     </section>
 
-    <section class="section" id="news">
-      <div class="section-header">
-        <h2>news</h2>
-      </div>
-      <div class="card timeline">
-        {news.map((entry) => (
-          <article class="item">
-            <div><p>{entry.item}</p></div>
-            <span class="meta">{entry.date}</span>
-          </article>
-        ))}
-      </div>
-    </section>
-
     <section class="section" id="research">
       <div class="section-header">
-        <p class="eyebrow">Research</p>
-        <h2>Recent research experience</h2>
+        <h2>RESEARCH</h2>
       </div>
       <div class="card timeline">
         {research.map((item) => (
@@ -133,8 +113,7 @@ const news = [
 
     <section class="section" id="projects">
       <div class="section-header">
-        <p class="eyebrow">Selected work</p>
-        <h2>Projects with measurable outcomes</h2>
+        <h2>PROJECTS</h2>
       </div>
       <div class="project-grid">
         {projects.map((project) => (
@@ -148,8 +127,7 @@ const news = [
 
     <section class="section" id="experience">
       <div class="section-header">
-        <p class="eyebrow">Industry</p>
-        <h2>Software and ML engineering foundation</h2>
+        <h2>EXPERIENCE</h2>
       </div>
       <article class="card item">
         <div>
@@ -166,8 +144,7 @@ const news = [
 
     <section class="section contact" id="contact">
       <div class="card">
-        <p class="eyebrow">Contact</p>
-        <h2>Open to ML Research Engineer roles.</h2>
+        <h2>CONTACT</h2>
         <p>Best fit: applied/research roles in NLP, retrieval, multimodal learning, efficient LLM inference, and responsible AI.</p>
         <div class="button-row">
           <a class="button primary" href="mailto:chinthasaisreenivas@gmail.com">chinthasaisreenivas@gmail.com</a>
@@ -214,7 +191,6 @@ const news = [
   .project-grid p { margin-top: 10px; }
   .contact .card { text-align: center; }
   .contact .button-row { justify-content: center; }
-  #news h2 { text-transform: lowercase; }
   @media (max-width: 860px) {
     .hero, .project-grid { grid-template-columns: 1fr; }
   }
