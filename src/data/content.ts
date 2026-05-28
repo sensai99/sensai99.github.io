@@ -2,8 +2,11 @@ export const profile = {
   name: 'Sai Sreenivas Chintha',
   affiliations: 'UMass Amherst, Microsoft, Adobe',
   bio: [
-    'I am a Computer Science M.S. student at UMass Amherst working on adaptive decoding, non-autoregressive language models, multimodal retrieval, and vision-language models.',
-    'My research interests are in NLP, information retrieval, and efficient LLM inference. I enjoy building reliable machine learning systems that are practical for real-world deployment.'
+    'Hello, I\'m Sai Sreenivas, a final-year M.S. CS student at the <a href="https://www.cics.umass.edu/" target="_blank" rel="noopener noreferrer">University of Massachusetts Amherst</a>.',
+    'My current research focuses on building diffusion models for text generation and adaptive speculative decoding techniques for LLMs.',
+    'Previously, I worked at the <a href="https://ciir.cs.umass.edu/" target="_blank" rel="noopener noreferrer">UMass CIIR Lab</a> focusing on personalized multimodal dense retrieval, especially with re-ranking using in-context learning.',
+    'As a research intern at <a href="https://www.kla.com/" target="_blank" rel="noopener noreferrer">KLA</a>, I worked on defect detection and retrieval pipelines end-to-end, including data curation, domain-adaptive pretraining, fine-tuning, and evaluation on noisy real-world datasets.',
+    'Before that, I worked at <a href="https://www.adobe.com/" target="_blank" rel="noopener noreferrer">Adobe</a> for 3 years, focusing on a couple of prototype projects involving caption generation systems using VLMs and diffusion models for layout generation.'
   ]
 };
 

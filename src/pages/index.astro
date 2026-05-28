@@ -21,8 +21,9 @@ const sectionLinks = [
       <div class="hero-copy">
         <h1 class="name-title">{profile.name}</h1>
         <p class="affiliations"><span class="eyebrow">Affiliations</span> {profile.affiliations}</p>
-        <p class="hero-text">{profile.bio[0]}</p>
-        <p class="hero-text">{profile.bio[1]}</p>
+        {profile.bio.map((paragraph) => (
+          <p class="hero-text" set:html={paragraph} />
+        ))}
         <div class="button-row">
           <a class="button secondary" href="mailto:chinthasaisreenivas@gmail.com">
             <SocialIcon name="email" />
@@ -77,6 +78,15 @@ const sectionLinks = [
     max-width: 760px;
     margin-top: 18px;
     color: #334155;
+  }
+  .hero-text :global(a) {
+    color: #0369a1;
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .hero-text :global(a:hover) {
+    color: var(--accent);
   }
   .name-title {
     white-space: nowrap;
