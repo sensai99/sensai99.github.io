@@ -1,6 +1,8 @@
 <header class="site-header">
   <a class="brand" href="#top">Sai Sreenivas Chintha</a>
   <nav aria-label="Primary navigation">
+    <a href="#top">about</a>
+    <a href="#news">news</a>
     <a href="#research">Research</a>
     <a href="#projects">Projects</a>
     <a href="#experience">Experience</a>
@@ -10,18 +12,38 @@
 
 <style>
   .site-header {
-    width: min(1120px, calc(100% - 32px));
+    width: min(1120px, calc(100% - 40px));
     margin: 0 auto;
-    padding: 22px 0;
+    padding: 18px 0 10px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 20px;
+    border-top: 1px solid var(--soft);
   }
-  .brand { font-weight: 800; letter-spacing: -0.03em; }
-  nav { display: flex; gap: 18px; color: var(--muted); font-weight: 650; font-size: 0.94rem; }
+  .brand {
+    font-size: 2.6rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1;
+  }
+  nav {
+    display: flex;
+    gap: 18px;
+    color: var(--muted);
+    font-weight: 500;
+    font-size: 1.05rem;
+  }
+  nav a {
+    border-bottom: 2px solid transparent;
+    padding-bottom: 2px;
+  }
+  nav a:hover {
+    border-bottom-color: var(--accent);
+  }
   @media (max-width: 720px) {
     .site-header { align-items: flex-start; flex-direction: column; }
     nav { flex-wrap: wrap; gap: 12px; }
+    .brand { font-size: 2rem; }
   }
 </style>

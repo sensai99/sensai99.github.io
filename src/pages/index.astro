@@ -60,6 +60,12 @@ const projects = [
     desc: 'Developed a diffusion model for aesthetic layout generation with text, images, and shapes, reaching an FID score of 15.2.'
   }
 ];
+
+const news = [
+  { date: 'Apr 2026', item: 'Will join as a Machine Learning Research Engineer after graduation.' },
+  { date: 'Feb 2026', item: 'Started Research Externship at Microsoft focused on adaptive decoding.' },
+  { date: 'Oct 2025', item: 'Joined UMass IESL Lab as Graduate Student Researcher.' }
+];
 ---
 
 <BaseLayout>
@@ -67,26 +73,44 @@ const projects = [
   <main id="top">
     <section class="hero section">
       <div class="hero-copy">
-        <p class="eyebrow">ML Research Engineer · NLP · Retrieval · VLMs</p>
-        <h1>Building efficient and reliable machine learning systems.</h1>
+        <p class="affiliations"><span class="eyebrow">Affiliations</span> UMass Amherst, Microsoft, Adobe</p>
+        <h1>Sai Sreenivas Chintha</h1>
         <p class="hero-text">
-          I am a Computer Science M.S. student at UMass Amherst working on adaptive decoding, non-autoregressive language models, multimodal retrieval, and vision-language models for domain-specific applications.
+          I am a Computer Science M.S. student at UMass Amherst working on adaptive decoding, non-autoregressive language models, multimodal retrieval, and vision-language models.
+        </p>
+        <p class="hero-text">
+          My research interests are in NLP, information retrieval, and efficient LLM inference. I enjoy building reliable machine learning systems that are practical for real-world deployment.
         </p>
         <div class="button-row">
-          <a class="button primary" href="/Sai_Sreenivas_Chintha_Resume.pdf" target="_blank">Download Resume</a>
-          <a class="button secondary" href="mailto:chinthasaisreenivas@gmail.com">Email Me</a>
-          <a class="button secondary" href="https://github.com/sensai99" target="_blank">GitHub</a>
-          <a class="button secondary" href="https://linkedin.com/in/sai-sreenivas" target="_blank">LinkedIn</a>
+          <a class="button primary" href="/Sai_Sreenivas_Chintha_Resume.pdf" target="_blank">cv</a>
+          <a class="button secondary" href="mailto:chinthasaisreenivas@gmail.com">email</a>
+          <a class="button secondary" href="https://github.com/sensai99" target="_blank">repositories</a>
+          <a class="button secondary" href="https://linkedin.com/in/sai-sreenivas" target="_blank">linkedin</a>
         </div>
       </div>
       <aside class="card hero-card">
-        <p class="eyebrow">Currently</p>
+        <div class="photo-placeholder" aria-hidden="true"></div>
+        <p class="eyebrow">Current focus</p>
         <h2>M.S. CS @ UMass Amherst</h2>
         <p>GPA 4.0/4.0 · Expected May 2026</p>
         <div class="pill-list">
           {skills.map((skill) => <span class="pill">{skill}</span>)}
         </div>
       </aside>
+    </section>
+
+    <section class="section" id="news">
+      <div class="section-header">
+        <h2>news</h2>
+      </div>
+      <div class="card timeline">
+        {news.map((entry) => (
+          <article class="item">
+            <div><p>{entry.item}</p></div>
+            <span class="meta">{entry.date}</span>
+          </article>
+        ))}
+      </div>
     </section>
 
     <section class="section" id="research">
@@ -157,17 +181,36 @@ const projects = [
 <style>
   .hero {
     display: grid;
-    grid-template-columns: minmax(0, 1.45fr) minmax(280px, 0.75fr);
-    gap: 26px;
-    align-items: center;
-    margin-top: 44px;
+    grid-template-columns: minmax(0, 1.4fr) minmax(300px, 0.7fr);
+    gap: 30px;
+    align-items: start;
+    margin-top: 20px;
   }
-  .hero-text { font-size: 1.18rem; max-width: 760px; margin-top: 22px; }
-  .hero-card { align-self: stretch; display: flex; flex-direction: column; justify-content: center; }
+  .affiliations {
+    color: var(--muted);
+    margin-bottom: 8px;
+    font-size: 1.06rem;
+  }
+  .hero-text {
+    font-size: 1.28rem;
+    max-width: 760px;
+    margin-top: 18px;
+    color: #d6dde4;
+  }
+  .hero-card { align-self: stretch; display: flex; flex-direction: column; gap: 14px; }
+  .photo-placeholder {
+    height: 220px;
+    border-radius: 10px;
+    border: 1px solid #2e3439;
+    background:
+      radial-gradient(circle at 30% 20%, rgb(41 196 239 / 0.25), transparent 40%),
+      linear-gradient(135deg, #252a2e, #1b1f22);
+  }
   .project-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
   .project-grid p { margin-top: 10px; }
   .contact .card { text-align: center; }
   .contact .button-row { justify-content: center; }
+  #news h2 { text-transform: lowercase; }
   @media (max-width: 860px) {
     .hero, .project-grid { grid-template-columns: 1fr; }
   }
