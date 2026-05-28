@@ -2,10 +2,9 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 
-const skills = ['Python', 'PyTorch', 'HuggingFace', 'Unsloth', 'vLLM', 'DeepSpeed', 'Information Retrieval', 'NLP', 'Vision-Language Models', 'Responsible AI', 'AWS', 'GCP', 'Linux'];
-
 const research = [
   {
+    logo: 'MS',
     org: 'Microsoft',
     role: 'Research Extern',
     date: 'Feb 2026 – Present',
@@ -15,6 +14,7 @@ const research = [
     ]
   },
   {
+    logo: 'UM',
     org: 'UMass IESL Lab',
     role: 'Graduate Student Researcher',
     date: 'Oct 2025 – Present',
@@ -24,6 +24,7 @@ const research = [
     ]
   },
   {
+    logo: 'KL',
     org: 'KLA',
     role: 'Machine Learning Research Intern',
     date: 'Jun 2025 – Aug 2025',
@@ -33,6 +34,7 @@ const research = [
     ]
   },
   {
+    logo: 'UC',
     org: 'UMass CIIR Lab',
     role: 'Graduate Student Researcher',
     date: 'Feb 2025 – May 2025',
@@ -77,20 +79,13 @@ const projects = [
           My research interests are in NLP, information retrieval, and efficient LLM inference. I enjoy building reliable machine learning systems that are practical for real-world deployment.
         </p>
         <div class="button-row">
-          <a class="button primary" href="/Sai_Sreenivas_Chintha_Resume.pdf" target="_blank">cv</a>
-          <a class="button secondary" href="mailto:chinthasaisreenivas@gmail.com">email</a>
-          <a class="button secondary" href="https://github.com/sensai99" target="_blank">repositories</a>
-          <a class="button secondary" href="https://linkedin.com/in/sai-sreenivas" target="_blank">linkedin</a>
+          <a class="button primary" href="mailto:chinthasaisreenivas@gmail.com">Email</a>
+          <a class="button secondary" href="https://linkedin.com/in/sai-sreenivas" target="_blank">LinkedIn</a>
+          <a class="button secondary" href="https://github.com/sensai99" target="_blank">GitHub</a>
         </div>
       </div>
       <aside class="card hero-card">
         <div class="photo-placeholder" aria-hidden="true"></div>
-        <p class="eyebrow">Current focus</p>
-        <h2>M.S. CS @ UMass Amherst</h2>
-        <p>GPA 4.0/4.0 · Expected May 2026</p>
-        <div class="pill-list">
-          {skills.map((skill) => <span class="pill">{skill}</span>)}
-        </div>
       </aside>
     </section>
 
@@ -102,7 +97,10 @@ const projects = [
         {research.map((item) => (
           <article class="item">
             <div>
-              <h3>{item.role} · {item.org}</h3>
+              <div class="role-row">
+                <span class="org-logo" aria-hidden="true">{item.logo}</span>
+                <h3>{item.role} · {item.org}</h3>
+              </div>
               <ul>{item.bullets.map((bullet) => <li>{bullet}</li>)}</ul>
             </div>
             <span class="meta">{item.date}</span>
@@ -189,6 +187,26 @@ const projects = [
   }
   .project-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
   .project-grid p { margin-top: 10px; }
+  .role-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .org-logo {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    border: 1px solid #bfdbfe;
+    background: #eff6ff;
+    color: #0369a1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.82rem;
+    font-weight: 800;
+    letter-spacing: 0.03em;
+    flex-shrink: 0;
+  }
   .contact .card { text-align: center; }
   .contact .button-row { justify-content: center; }
   @media (max-width: 860px) {
